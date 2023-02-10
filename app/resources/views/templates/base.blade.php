@@ -13,7 +13,9 @@
     <body>
         <div>
             <div class="grid-x grid-padding-x align-center">
-                <img class="cell small-2" src="https://laravel.com/img/logotype.min.svg"/>
+                <a href="{{url('/')}}">
+                    <img class="cell small-2" src="https://laravel.com/img/logotype.min.svg"/>
+                </a>
             </div>
             <div class="grid-x grid-padding-x align-center">
             @include('templates.partials.search')
