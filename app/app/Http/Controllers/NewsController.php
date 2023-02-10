@@ -20,6 +20,14 @@ class NewsController extends Controller
         ]);
     }
 
+    public function search() {
+        return view('news.list', [
+            'news' => News::where(function($query){
+                $query->where('news.title', 'ILIKE', '%'.trim(request()->get('search')).'%');
+            })->get()
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
