@@ -6,6 +6,7 @@ use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
 use App\Models\News;
+use Illuminate\Support\Facades\Route;
 
 class CategoryController extends Controller
 {
@@ -51,9 +52,7 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         return view('news.list', [
-            'news' => News::whereHas('categories', function($query) use ($category) {
-                $query->where('category_id', '=', $category->id);
-            })
+            'news' => Category::findOrFail($category->id)->news()->get()
         ]);
     }
 

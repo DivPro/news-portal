@@ -13,6 +13,9 @@
     <body>
         <div>
             <div class="grid-x grid-padding-x align-center">
+                <img class="cell small-2" src="https://laravel.com/img/logotype.min.svg"/>
+            </div>
+            <div class="grid-x grid-padding-x align-center">
                 <div class="cell small-2"> @include('templates.partials.sidebar')</div>
                 <div class="cell small-6">@yield('content')</div>
             </div>
